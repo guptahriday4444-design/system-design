@@ -23,11 +23,4 @@ public class RateLimitManager {
         return bucket.allowRequest();
     }
 
-    // next improvement: use a distributed cache like Redis to store the token buckets
-    // and use a lock to synchronize the access to the cache
-    // this will allow us to scale the system horizontally
-    // and to handle requests from multiple clients gracefully
-    // Can also add batching to the requests to reduce the number of requests to the cache
-
-    // for solving hotkey problem, we can do key striping to distribute the requests to the different token buckets
 }
