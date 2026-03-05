@@ -6,7 +6,7 @@ public class Main {
         double capacity = 100;
         double refillRate = 100.0 / 60.0; // 100 per minute
 
-        RateLimitManager limiter = new RateLimitManager(capacity, refillRate, 180);
+        TokenBucketRateLimiter limiter = new TokenBucketRateLimiter(capacity, refillRate, 180);
 
         String user = "user123";
 

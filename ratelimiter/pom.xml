@@ -10,5 +10,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>tokenBucket</module>
+        <module>leakyBucket</module>
     </modules>
 </project>

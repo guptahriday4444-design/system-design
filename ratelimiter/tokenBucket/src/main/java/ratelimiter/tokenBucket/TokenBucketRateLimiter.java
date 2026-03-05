@@ -5,12 +5,12 @@ import java.util.concurrent.TimeUnit;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 
-public class RateLimitManager {
+public class TokenBucketRateLimiter {
     private final Cache<String, TokenBucket> tokenBuckets;
     private final double capacity;
     private final double refillRate;
 
-    public RateLimitManager(double capacity, double refillRate, long expirySeconds) {
+    public TokenBucketRateLimiter(double capacity, double refillRate, long expirySeconds) {
         this.tokenBuckets = Caffeine.newBuilder()
                 .expireAfterAccess(expirySeconds, TimeUnit.SECONDS)
                 .build();
